@@ -6,6 +6,9 @@ namespace SnakeAndLadder
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Snake & Ladder game");
+            Play play = new Play();
+            play.DieRoll();
+            
         }
     }
 }
