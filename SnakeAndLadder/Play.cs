@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,10 +22,10 @@ namespace SnakeAndLadder
         }
         public void Game()
         {
-            int position = 0,Die = 0;
-            Play p=new Play();
+            int position = 0, Die = 0;
+            Play p = new Play();
             p.DieRoll();
-            Random random=new Random();
+            Random random = new Random();
             while (this.Playerposition < WINNING_POSITION)
             {
                 int option = random.Next(0, 3);
@@ -33,21 +34,15 @@ namespace SnakeAndLadder
                     case NO_PLAY:
                         break;
                     case LADDER:
-                        this.Playerposition += DieRoll();
-                        if (this.Playerposition > WINNING_POSITION)
-                            this.Playerposition -= Die;
+                        Playerposition += DieRoll();
                         break;
                     case SNAKE:
-                        this.Playerposition -= DieRoll();
-                        if (this.Playerposition <0)
-                            this.Playerposition = 0;
+                        Playerposition -= DieRoll();
                         break;
                 }
+                Console.WriteLine("Playerposition---->" + Playerposition);
             }
-            Console.WriteLine("Player position------>"+Playerposition);
-            Console.WriteLine("Die count----->"+count);
         }
-
     }
 }
 
