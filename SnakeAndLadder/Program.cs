@@ -8,7 +8,7 @@ namespace SnakeAndLadder
             Console.WriteLine("Welcome to Snake & Ladder game");
             Play play = new Play();
             Console.WriteLine("the die is :" + play.DieRoll);
-            play.Game();
+            play.MultiPlayer();
         }
     }
 }
