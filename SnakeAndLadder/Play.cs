@@ -45,7 +45,9 @@ namespace SnakeAndLadder
                 }
             }
             Console.WriteLine("Player position------>"+Playerposition);
+            Console.WriteLine("Die count----->"+count);
         }
+
     }
 }
 
