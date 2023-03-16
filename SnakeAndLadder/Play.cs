@@ -21,7 +21,7 @@ namespace SnakeAndLadder
         }
         public void Game()
         {
-            int position = 0;
+            int position = 0,Die = 0;
             Play p=new Play();
             p.DieRoll();
             Random random=new Random();
@@ -34,10 +34,12 @@ namespace SnakeAndLadder
                         break;
                     case LADDER:
                         this.Playerposition += DieRoll();
+                        if (this.Playerposition > WINNING_POSITION)
+                            this.Playerposition -= Die;
                         break;
                     case SNAKE:
                         this.Playerposition -= DieRoll();
-                        if (this.Playerposition < 0)
+                        if (this.Playerposition <0)
                             this.Playerposition = 0;
                         break;
                 }
